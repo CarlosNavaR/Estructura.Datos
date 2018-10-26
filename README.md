@@ -18,5 +18,13 @@
  > Unidad 2
  6. Recursividad
  7. Pilas
- 8.
+ 8. Representacion en memoria de las pilas y operaciones básicas de las Pilas
+ 9. Colas simples
+ 10. Colas circulares
+ 11. Bicolas
+ > Unidad 3
+ 12. Listas enlazadas simples
+ 13. Listas circulares
+ 14. Listas doblemente enlazadas 
+ 15. Arboles binarios
  
