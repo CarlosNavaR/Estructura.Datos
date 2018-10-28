@@ -23,14 +23,13 @@
  17. Listas enlazadas [Insertar]
  18. Listas enlazadas [Recorrer]
  19. Listas enlazadas [Eliminar]
- 20. Listas ... []
- 21. Listas ... []
- 22. Listas ... []
+ 20. Listas Circulares [Insertar]
+ 21. Listas Circulares [Recorrer]
+ 22. Listas Circulares [Eliminar]
  23. Listas ... []
  24. Listas ... []
  25. Listas ... []
- 26. Listas ... []
- 27. Arboles binarios [Push]
+ 26. Arboles binarios [Push]
  
 ## INVESTIGACIONES 
  > Unidad 1
