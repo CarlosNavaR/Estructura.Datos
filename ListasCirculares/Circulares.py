@@ -1,4 +1,4 @@
-import os ## Importo libreria para 
+import os ## Importo libreria para limpiar pantalla
 class Nodo(): ## Se crea clase nodo que contiene las variables que se usaran para enlazar los datos
 	def __init__(self, dato):
 		self.dato = dato ## Variable que almacenara los datos
