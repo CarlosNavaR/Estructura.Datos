@@ -22,33 +22,50 @@ class Operaciones(): ## Se crea una clase que contendra las operaciones a realiz
 		
 		if self.Null() == True: ## Se verifica si la lista esta vacia
 			self.raiz = self.finT = self.fin = Nodo(dato) ## Si esta vacia se igualan todos los datos y se les asigna el dato en laprimera posicion
+			self.finT.sig = self.fin.sig = self.raiz ## Unen el ultimo elemento con la raiz para que sea circular
 		else:
 			temporal = self.fin ## Almacena temporalmente el nodo para ligar los datos
 			self.finT = self.fin = temporal.sig = Nodo(dato) ## Liga los nodos con la siguiente posicion y almacena el dato
+			self.finT.sig = self.fin.sig = self.raiz ## Unen el ultimo elemento con la raiz para que sea circular
 			
 	def Recorrer(self): ## Funcion que recorre los nodos e imprime los datos
 		temp = self.raiz ## Almacena la raiz para poder moverla en una variable temporal y no perder la sucesion
+		i = True
 		if self.Null() == True: ## Se verifica que contenga datos
 			print("\n\tNo hay datos registrados...") ## Si no tiene regresa un mensaje 
 		else:
-			while temp != None: ## Mientras la variable temporal se diferente a nulo se ejecutara
+			while i: ## Mientras la variable temporal se diferente a nulo se ejecutara
 				print("\t[" + str(temp.dato)+"] ") ## Imprime los datos 
-				temp = temp.sig ## Hace que la variable recorra las diferentes posiciones
+				if temp == self.fin:
+					i = False
+				else:
+					temp = temp.sig ## Hace que la variable recorra las diferentes posiciones
 	
 	def Buscar(self,item): ## Funcion que recibe un parametro y lo busca entre los datos almacenados
-		temp = self.finT = self.raiz ## Variable que regresa la variable finT a la raiz y la almacena
-		i = False ## Variable que controla si existe el dato o no
-		while temp != None:  ## Mientras la variable temporal se diferente a nulo se ejecutara
-			if temp.dato == item:  ## Verifica si el parametro coincide con algun dato
-				i = True ## SI coincide la variable I torna valor verdadero
-				return i ## Regresa el valor
+		self.finT = self.raiz ##  Regresa el puntero a la raiz
+		temp = 1 ## VAriable temporal que servira para verificar si existe o no el dato
+		
+		if self.Null() == True: ## Se verifica que la lista no este vacia
+			print("\n\tLista vacia")
+		else:
+			while self.finT.dato != item and temp == 1: ## Se ejecutara el siguiente siempre y cuando el dato no se encuentre y la variable temporal sea 1
+				if self.finT.sig != self.raiz: ## Se ejecuta siempre y cuando sea diferente a nulo
+					self.finT = self.finT.sig ## Se recorren todos los dato
+				else:
+					temp = 0
+		
+			if temp == 0: ## Si el valor de la variable temporal es 0 es por que no se encuentra el dato
+				print("\n\tNo existe dato")
 			else:
-				temp = temp.sig ## SI no existe el dato avanza una posicion y regresa a comparar
+				print("\n\tDato Existente")
+				
+
 	
 	def EliminarRaiz(self): ## Elimina la raiz que almacena los datos
 		temp = self.raiz ## Se almacena la raiz para no perderla
 		if self.Null() == False: ## Se verifica que contenga datos
 			self.raiz = self.raiz.sig ## SI contiene datos la raiz es pasada al siguiente dato 
+			self.finT.sig = self.fin.sig = self.raiz ## Une el elemento final con la raiz
 			temp = None ## Se elimina la raiz anterior
 		else: ## Si no contiene datos regresa un mensaje
 			print("\n\tNo existe raiz para eliminar...")
@@ -62,6 +79,7 @@ class Operaciones(): ## Se crea una clase que contendra las operaciones a realiz
 					temp = temp.sig ## Asigna el siguiente valor del que se encontraba
 				temp.sig = None ## Elimina el ultimo valor
 				self.fin = temp ## y enlaza el final con la variable temporal
+				self.finT.sig = self.fin.sig = self.raiz ## Une el elemento final con la raiz
 			else:
 				self.raiz = None ## Si no se cumplio la sentencia es por que solo hay un dato y es la raiz y lo elimina
 		else:
@@ -75,7 +93,7 @@ class Operaciones(): ## Se crea una clase que contendra las operaciones a realiz
 			print("\n\tLista vacia")
 		else:
 			while self.finT.dato != item and temp == 1: ## Se ejecutara el siguiente siempre y cuando el dato no se encuentre y la variable temporal sea 1
-				if self.finT.sig != None: ## Se ejecuta siempre y cuando sea diferente a nulo
+				if self.finT.sig != self.raiz: ## Se ejecuta siempre y cuando sea diferente a nulo
 					self.fin = self.finT   
 					self.finT = self.finT.sig ## Se recorren todos los dato
 				else:
@@ -121,11 +139,7 @@ class  Menu(): ## Clase que controlara las operaciones y lo que se mostrara en c
 			
 			elif self.opc == 5:
 				date = int(input("\n\tIngresa dato a buscar: "))
-				verificar = captura.Buscar(date) ## Ejecuta la operacion que muestra si un dato existe o no
-				if verificar == True: ## Si la funcion regresa un verdadero imprime un mensaje que indica que existe el dato de igual manera si no existe
-					print("\n\tDato existente") 
-				else:
-					print("\n\tNo existe dato")
+				captura.Buscar(date) ## Ejecuta la operacion que muestra si un dato existe o no
 					
 			elif self.opc == 6:
 				exit() ## Se sale del programa
