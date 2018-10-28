@@ -57,37 +57,8 @@ class Operaciones():
 				if temp == self.raiz: ## Verifica que no sea el unico dato
 					i = False 
 					return i	
-	#
-	#
-	#
-	# Crear metodo buscar y eliminar
-	#
-	#
+
 	
-
-	def EliminarRaiz(self): ## Elimina la raiz que almacena los datos
-		if self.Null() == True: ## Se verifica que contenga datos
-			print("\n\tNo existe raiz para eliminar...")
-		elif self.raiz.sig == None: ## Verifica que la variable temporal sea diferente al fin de la lista
-			self.raiz = self.fin = None ## Si no se cumplio la sentencia es por que solo hay un dato y es la raiz y lo elimina
-			print("\n\tUnica Raiz ELiminada")
-		else:
-			self.raiz = self.raiz.sig ## SI contiene datos la raiz es pasada al siguiente dato 
-			self.raiz.ant = None
-			print("\n\tRaiz ELiminada")
-		
-
-	def Eliminar(self): ## Esta funcion permite eliminar el ultimo nodo de la lista
-		if self.Null() == True: ## Verifica si contiene datos
-			print("\n\tNo hay datos para eliminar...")
-		elif self.raiz.sig == None: ## Verifica que la variable temporal sea diferente al fin de la lista
-			self.raiz = self.fin = None ## Si no se cumplio la sentencia es por que solo hay un dato y es la raiz y lo elimina
-			print("\n\tUltimo dato eliminado")
-		else:
-			self.fin = self.fin.ant
-			self.fin.sig = None
-			print("\n\tDato eliminado")
-		
 
 class  Menu(): ## Clase que controlara las operaciones y lo que se mostrara en consola
 	
@@ -97,7 +68,7 @@ class  Menu(): ## Clase que controlara las operaciones y lo que se mostrara en c
 	def capturar(self): ## Funcion que muestra datos en pantalla y pide los datos
 		captura = Operaciones() ## hace referencia a la clase que contiene las operaciones para poder ser usadas
 		while True: ## Se crea un ciclo while siempre en verdadero para que se ejecute infinitamente
-			print("\n1.-Almacenar datos\n2.-Mostrar datos de inicio a fin\n3.-Mostrar datos de final a inicio\n4.-Buscar elemento\n5.-Eliminar datos\n6.-Eliminar raiz\n7.-Buscar dato y eliminarlo\n8.-Salir")
+			print("\n1.-Almacenar datos\n2.-Mostrar datos de inicio a fin\n3.-Mostrar datos de final a inicio\n4.-Buscar elemento\n8.-Salir")
 			self.opc = int(input("\n\tIngrese opcion -> ")) ## Se imprimen las operaciones y se captura una opcion
 			os.system("clear") ## Limpia la pantalla
 			
@@ -118,16 +89,6 @@ class  Menu(): ## Clase que controlara las operaciones y lo que se mostrara en c
 					print("\n\tDato existente") 
 				else:
 					print("\n\tNo existe dato")
-					
-			elif self.opc == 5:
-				captura.Eliminar() ## Ejecuta la operacion que elimina elementos de atras adelante
-			
-			elif self.opc == 6:
-				captura.EliminarRaiz()
-			
-			elif self.opc == 7:
-				dato = int(input("\n\tIngresa dato a eliminar: "))
-				captura.BuscarEliminar(dato) ## Ejecuta la operacion que busca un dato y lo elimina
 					
 			elif self.opc == 8:
 				exit() ## Se sale del programa
