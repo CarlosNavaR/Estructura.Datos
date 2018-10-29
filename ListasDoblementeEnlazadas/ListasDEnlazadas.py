@@ -19,6 +19,16 @@ class Operaciones():
 		else:
 			return False ## False si tiene datos
 			
+	def IngresarInicio(self,dato):
+		if self.Null() == True: ## Se verifica si la lista esta vacia
+			self.raiz = self.fin = Nodo(dato) ## Si esta vacia se les asigna el dato en la primera posicion
+		else: 
+			temp = Nodo(dato) ## Almacena el dato para poder insertarlo al inicio
+			temp.sig = self.raiz ## Enlaza el dato el siguiente nodo sea la raiz 
+			self.raiz.ant = temp ## Enlaza que la raiz que sea el anterior dato
+			self.raiz = temp ## Le asigna el valor a la raiz
+					
+	
 	def Ingresar(self,dato):
 		if self.Null() == True: ## Se verifica si la lista esta vacia
 			self.raiz = self.fin = Nodo(dato) ## Si esta vacia se les asigna el dato en la primera posicion
@@ -97,11 +107,14 @@ class  Menu(): ## Clase que controlara las operaciones y lo que se mostrara en c
 	def capturar(self): ## Funcion que muestra datos en pantalla y pide los datos
 		captura = Operaciones() ## hace referencia a la clase que contiene las operaciones para poder ser usadas
 		while True: ## Se crea un ciclo while siempre en verdadero para que se ejecute infinitamente
-			print("\n1.-Almacenar datos\n2.-Mostrar datos de inicio a fin\n3.-Mostrar datos de final a inicio\n4.-Buscar elemento\n5.-Eliminar datos\n6.-Eliminar raiz\n7.-Buscar dato y eliminarlo\n8.-Salir")
+			print("\n0.-Almacenar por el inicio\n1.-Almacenar datos final\n2.-Mostrar datos de inicio a fin\n3.-Mostrar datos de final a inicio\n4.-Buscar elemento\n5.-Eliminar datos\n6.-Eliminar raiz\n7.-Buscar dato y eliminarlo\n8.-Salir")
 			self.opc = int(input("\n\tIngrese opcion -> ")) ## Se imprimen las operaciones y se captura una opcion
 			os.system("clear") ## Limpia la pantalla
 			
-			if self.opc == 1:
+			if self.opc == 0:
+				x = int(input("\n\tIngresa dato: ")) ## pide un dato y lo manda como parametro para ser almacenado
+				captura.IngresarInicio(x)
+			elif self.opc == 1:
 				x = int(input("\n\tIngresa dato: ")) ## pide un dato y lo manda como parametro para ser almacenado
 				captura.Ingresar(x)
 			
