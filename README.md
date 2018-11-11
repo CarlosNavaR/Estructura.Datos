@@ -26,10 +26,17 @@
  20. Listas Circulares [Insertar]
  21. Listas Circulares [Recorrer]
  22. Listas Circulares [Eliminar]
- 23. Listas ... []
- 24. Listas ... []
- 25. Listas ... []
+ 23. Listas DoblementeEnlazadas [INSERTAR]
+ 24. Listas DoblementeEnlazadas [RECORRER]
+ 25. Listas DoblementeEnlazadas [ELIMINAR]
  26. Arboles binarios [Push]
+ 27. Arboles binarios [Peek]
+ 28. Arboles balanceados [Push]
+ 29. Arboles balanceados [Peek]
+ 30. Metodo de burbuja
+ 31. Metodo QuickSort
+ 32. Metodo shell sort
+ 33. ????
  
 ## INVESTIGACIONES 
  > Unidad 1
@@ -50,6 +57,9 @@
  13. Listas circulares
  14. Listas doblemente enlazadas 
  15. Arboles binarios
+ 16. Arboles Balanceados
+ 17. Metodos internos de ordenamiento
+ 18. Metodos externos de ordenamiento
  
  ## Examenes
  > Unidad 2
@@ -57,4 +67,5 @@
  2. Ecuacion [2^n]
  3. Control de versiones
  4. Simulacion Fila de clientes
+ 5. Operaciones con lista doblemente enlazada
  
