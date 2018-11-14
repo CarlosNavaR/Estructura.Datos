@@ -1,5 +1,8 @@
 # Estructura.Datos
 
+## Proyecto Final
+ > Metodos de ordenamiento
+
 ## PRACTICAS 
  > Unidad 1
  1. Numeros 1-100 [RECURSIVIDAD]
@@ -60,12 +63,13 @@
  16. Arboles Balanceados
  17. Metodos internos de ordenamiento
  18. Metodos externos de ordenamiento
- 
+ 19. Metodos de busqueda
  ## Examenes
  > Unidad 2
  1. Suma [1-9 Recursividad]
  2. Ecuacion [2^n]
  3. Control de versiones
  4. Simulacion Fila de clientes
+ > Unidad 3
  5. Operaciones con lista doblemente enlazada
  
