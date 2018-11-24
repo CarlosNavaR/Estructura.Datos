@@ -40,7 +40,8 @@
  30. Metodo de burbuja
  31. Metodo QuickSort
  32. Metodo shell sort
- 33. ????
+ 33. Metodo Merge 
+ 34. 
  
 ## INVESTIGACIONES 
  > Unidad 1
