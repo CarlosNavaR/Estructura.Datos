@@ -41,7 +41,8 @@
  31. Metodo QuickSort
  32. Metodo shell sort
  33. Metodo Merge 
- 34. 
+ 34. Busqueda Binaria
+ 35. Busqueda secuencial
  
 ## INVESTIGACIONES 
  > Unidad 1
