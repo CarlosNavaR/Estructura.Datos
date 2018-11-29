@@ -3,8 +3,8 @@ import random
 class QuickSort(): ## Clase que almacena las operaciones para ordernar por ordenamiento rapido
 					
 	def listaAleatorios(self): ## Funcion que genera nuneros aleatorios
-	      lista = [0]  * 50 ## Se declara la lista y se multiplica por la cantidad de elementos que contendra para general el espacio
-	      for i in range(50): ## Ciclo que genera los numeros aleatorios
+	      lista = [0]  * 5000 ## Se declara la lista y se multiplica por la cantidad de elementos que contendra para general el espacio
+	      for i in range(5000): ## Ciclo que genera los numeros aleatorios
 	          lista[i] = random.randint(1,100) ## Numeros que se generaran en un rango del 1 al 100 
 	      return lista	## Regresa la lista generada
 	
