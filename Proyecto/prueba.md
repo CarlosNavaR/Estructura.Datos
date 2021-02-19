@@ -1,1 +1,1 @@
-[Repositorio](../../../readme.md "Repo")
+[Repositorio](../../../ "Repo")
